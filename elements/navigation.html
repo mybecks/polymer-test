@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../bower_components/polymer/polymer.html" rel="import">
+    <link href="../bower_components/paper-material/paper-material.html" rel="import">
+    <link href="../bower_components/paper-tabs/paper-tabs.html" rel="import">
+    <link href="../bower_components/iron-pages/iron-pages.html" rel="import">
+    <link href="../bower_components/paper-toolbar/paper-toolbar.html" rel="import">
+    <link href="../bower_components/paper-icon-button/paper-icon-button.html" rel="import">
+    <link href="../bower_components/iron-icons/iron-icons.html" rel="import">
+</head>
+<!-- http://stackoverflow.com/questions/24688986/binding-paper-tabs-to-core-pages-with-polymer -->
+<dom-module id="my-nav">
+    <style>
+        /* CSS rules for your element */
+    </style>
+    <template>
+        <paper-toolbar>
+            <paper-icon-button icon="menu" on-tap="menuAction"></paper-icon-button>
+            <div class="title">Title</div>
+            <paper-icon-button icon="more-vert" on-tap="moreAction"></paper-icon-button>
+            <div>Hello {{user}}</div>
+            <paper-icon-button icon="icons:power-settings-new" on-tap="logout"></paper-icon-button>
+        </paper-toolbar>
+        <paper-material elevation="1">
+            <paper-tabs selected="{{selected}}" noink="{{noink}}">
+                <paper-tab>TAB 1</paper-tab>
+                <paper-tab>TAB 2</paper-tab>
+                <paper-tab>TAB 3</paper-tab>
+            </paper-tabs>
+            <iron-pages selected="{{selected}}">
+                <div>
+                    <paper-tabs selected="{{selected1}}" noink="{{noink}}">
+                        <paper-tab>TAB 1.1</paper-tab>
+                        <paper-tab>TAB 1.2</paper-tab>
+                        <paper-tab>TAB 1.3</paper-tab>
+                    </paper-tabs>
+                    <iron-pages selected="{{selected1}}">
+                        <div>Content 1.1</div>
+                        <div>Content 1.2</div>
+                        <div>Content 1.3</div>
+                    </iron-pages>
+                </div>
+                <div>
+                    <paper-tabs selected="{{selected2}}" noink="{{noink}}">
+                        <paper-tab>TAB 2.1</paper-tab>
+                        <paper-tab>TAB 2.2</paper-tab>
+                        <paper-tab>TAB 2.3</paper-tab>
+                    </paper-tabs>
+                    <iron-pages selected="{{selected2}}">
+                        <div>Content 2.1</div>
+                        <div>Content 2.2</div>
+                        <div>Content 2.3</div>
+                    </iron-pages>
+                </div>
+                <div>
+                    <paper-tabs selected="{{selected3}}" noink="{{noink}}">
+                        <paper-tab>TAB 3.1</paper-tab>
+                        <paper-tab>TAB 3.2</paper-tab>
+                        <paper-tab>TAB 3.3</paper-tab>
+                        <paper-tab>TAB 3.4</paper-tab>
+                        <paper-tab>TAB 3.5</paper-tab>
+                        <paper-tab>TAB 3.6</paper-tab>
+                    </paper-tabs>
+                    <iron-pages selected="{{selected3}}">
+                        <div>Content 3.1</div>
+                        <div>Content 3.2</div>
+                        <div>Content 3.3</div>
+                        <div>Content 3.4</div>
+                        <div>Content 3.5</div>
+                        <div>Content 3.6</div>
+                    </iron-pages>
+                </div>
+            </iron-pages>
+        </paper-material>
+    </template>
+</dom-module>
+<script>
+    Polymer({
+        is: "my-nav",
+        properties: {
+            // declare properties for the element's public API
+            selected: {
+                type: String,
+                value: ''
+            },
+            selected1: {
+                type: String,
+                value: ''
+            },
+            selected2: {
+                type: String,
+                value: ''
+            },
+            selected3: {
+                type: String,
+                value: ''
+            },
+            noink: {
+                type: Boolean,
+                value: true
+            },
+            user: {
+                type: String,
+                value: 'Mr. Smith'
+            }
+        },
+    });
+</script>
