@@ -1,0 +1,17 @@
+{
+  "name": "polymer-test",
+  "authors": [
+    "mybecks <andre_becker@gmx.net>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "polymer": "Polymer/polymer#~1.2.3",
+    "platform": "Polymer/platform#~0.4.2",
+    "paper-elements": "PolymerElements/paper-elements#~1.0.7"
+  }
+}
